@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace WinStudent
 {
     partial class FrmLogin
@@ -58,7 +60,7 @@ namespace WinStudent
             this.txtUserPwd.Location = new System.Drawing.Point(178, 173);
             this.txtUserPwd.Name = "txtUserPwd";
             this.txtUserPwd.Size = new System.Drawing.Size(164, 28);
-            this.txtUserPwd.TabIndex = 5;
+            this.txtUserPwd.TabIndex = 2;
             // 
             // label2
             // 
@@ -74,7 +76,7 @@ namespace WinStudent
             this.btnExit.Location = new System.Drawing.Point(210, 271);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(132, 45);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -93,14 +95,14 @@ namespace WinStudent
             this.txtUserName.Location = new System.Drawing.Point(178, 120);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(164, 28);
-            this.txtUserName.TabIndex = 2;
+            this.txtUserName.TabIndex = 1;
             // 
             // btnlogin
             // 
             this.btnlogin.Location = new System.Drawing.Point(54, 271);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(132, 45);
-            this.btnlogin.TabIndex = 0;
+            this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "登录";
             this.btnlogin.UseVisualStyleBackColor = true;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -113,6 +115,7 @@ namespace WinStudent
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录页面";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -120,6 +123,8 @@ namespace WinStudent
             this.ResumeLayout(false);
 
         }
+
+
 
         #endregion
 

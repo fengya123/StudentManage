@@ -80,6 +80,7 @@ namespace WinStudent
             this.subStudentList.Name = "subStudentList";
             this.subStudentList.Size = new System.Drawing.Size(182, 34);
             this.subStudentList.Text = "学生列表";
+            this.subStudentList.Click += new System.EventHandler(this.subStudentList_Click);
             // 
             // miClass
             // 
@@ -95,12 +96,14 @@ namespace WinStudent
             this.subAddClass.Name = "subAddClass";
             this.subAddClass.Size = new System.Drawing.Size(182, 34);
             this.subAddClass.Text = "新增班级";
+            this.subAddClass.Click += new System.EventHandler(this.subAddClass_Click);
             // 
             // subClassList
             // 
             this.subClassList.Name = "subClassList";
             this.subClassList.Size = new System.Drawing.Size(182, 34);
             this.subClassList.Text = "班级列表";
+            this.subClassList.Click += new System.EventHandler(this.subClassList_Click);
             // 
             // miGrade
             // 
@@ -115,6 +118,7 @@ namespace WinStudent
             this.subGradeList.Name = "subGradeList";
             this.subGradeList.Size = new System.Drawing.Size(182, 34);
             this.subGradeList.Text = "年级列表";
+            this.subGradeList.Click += new System.EventHandler(this.subGradeList_Click);
             // 
             // miExit
             // 
@@ -132,13 +136,18 @@ namespace WinStudent
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学生管理系统主页面";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+        
 
 
         #endregion

@@ -1,7 +1,7 @@
 ﻿
 namespace WinStudent
 {
-    partial class FrmStudentList
+    partial class FrmClassList
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace WinStudent
         {
             this.SuspendLayout();
             // 
-            // FrmStudentList
+            // FrmClassList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmStudentList";
-            this.Text = "学生列表";
-            this.Load += new System.EventHandler(this.FrmStudentList_Load);
+            this.Name = "FrmClassList";
+            this.Text = "班级列表页面";
             this.ResumeLayout(false);
 
         }
