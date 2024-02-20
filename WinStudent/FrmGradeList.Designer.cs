@@ -30,12 +30,19 @@ namespace WinStudent
         private void InitializeComponent()
         {
             this.dgvGradeList = new System.Windows.Forms.DataGridView();
+            this.GradeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GradeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGradeList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGradeList
             // 
+            this.dgvGradeList.AllowUserToAddRows = false;
+            this.dgvGradeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGradeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGradeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GradeId,
+            this.GradeName});
             this.dgvGradeList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGradeList.Location = new System.Drawing.Point(0, 0);
             this.dgvGradeList.Name = "dgvGradeList";
@@ -44,6 +51,20 @@ namespace WinStudent
             this.dgvGradeList.Size = new System.Drawing.Size(1058, 760);
             this.dgvGradeList.TabIndex = 0;
             this.dgvGradeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // GradeId
+            // 
+            this.GradeId.DataPropertyName = "GradeId";
+            this.GradeId.HeaderText = "年级编号";
+            this.GradeId.MinimumWidth = 8;
+            this.GradeId.Name = "GradeId";
+            // 
+            // GradeName
+            // 
+            this.GradeName.DataPropertyName = "GradeName";
+            this.GradeName.HeaderText = "年级名称";
+            this.GradeName.MinimumWidth = 8;
+            this.GradeName.Name = "GradeName";
             // 
             // FrmGradeList
             // 
@@ -64,5 +85,7 @@ namespace WinStudent
         #endregion
 
         private System.Windows.Forms.DataGridView dgvGradeList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GradeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GradeName;
     }
 }
