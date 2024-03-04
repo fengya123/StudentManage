@@ -69,6 +69,7 @@ namespace WinStudent
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "查询";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtClassName
             // 
@@ -86,7 +87,6 @@ namespace WinStudent
             this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "班名:";
-            //this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // cboGrades
             // 
