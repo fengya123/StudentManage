@@ -68,9 +68,27 @@ namespace WinStudent
                     new SqlParameter("@GradeId",gradeId)
                 };
                 object oCount = SqlHelper.ExecuteScalar(sqlExists, paras);
-                if(oCount==null ||oCount==DBNull.Value||((int)oCount)==0)
-                  { 
+                if (oCount == null || oCount == DBNull.Value || ((int) oCount) == 0)
+                  {
                     //添加操作
+                    string sqlAdd = "insert into Classinfo (ClassName,GradeId,Remark) values (@ClassName,@GradeId,@Remark)";
+                    SqlParameter[] parasAdd =
+                    {
+                        new SqlParameter("@ClassName",className),
+                        new SqlParameter("@GradeId",className),
+                        new SqlParameter("@Remark",className)
+                    };
+                    //执行并返回值
+                    int count = SqlHelper.ExecuteNonQuery(sqlAdd, parasAdd);
+                    if(count>0)
+                    {
+                        MessageBox.Show($"班级:{className} 添加成功!", "添加班级提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("班级添加失败!", "添加班级提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 else
                 {

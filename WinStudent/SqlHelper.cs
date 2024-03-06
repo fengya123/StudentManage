@@ -68,5 +68,29 @@ namespace WinStudent
             }
             return dt;
         }
+        /// <summary>
+        /// 返回受影响的行数 Insert Update Delete
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public static int ExecuteNonQuery(string sql,params SqlParameter[] paras)
+        {
+            int count = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                //打开连接
+                conn.Open();  //最晚打开 最早关闭
+                //创建Command对象
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddRange(paras);
+                //执行命令
+                count = cmd.ExecuteNonQuery();//执行T-SQL语句，返回受影响的行数
+                                        //关闭连接
+                                        //conn.Close();
+            }
+            return count;
+        }
     }
 }
