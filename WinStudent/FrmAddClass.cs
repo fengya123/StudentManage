@@ -61,7 +61,7 @@ namespace WinStudent
 
             //判断是否已存在
             {
-                string sqlExists = "select coun(1) fron ClassInfo where ClassName=@ClassName and GradeId=@GradeId";
+                string sqlExists = "select count(1) FROM ClassInfo  where ClassName=@ClassName and GradeId=@GradeId";
                 SqlParameter[] paras =
                 {
                     new SqlParameter("@ClassName",className),
@@ -75,8 +75,8 @@ namespace WinStudent
                     SqlParameter[] parasAdd =
                     {
                         new SqlParameter("@ClassName",className),
-                        new SqlParameter("@GradeId",className),
-                        new SqlParameter("@Remark",className)
+                        new SqlParameter("@GradeId",gradeId),
+                        new SqlParameter("@Remark",remark)
                     };
                     //执行并返回值
                     int count = SqlHelper.ExecuteNonQuery(sqlAdd, parasAdd);
@@ -97,6 +97,11 @@ namespace WinStudent
                 }
             }
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

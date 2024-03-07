@@ -26,7 +26,11 @@ namespace WinStudent
              return frmStudentList;
 
         }
-
+        /// <summary>
+        /// 加载年级列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmStudentList_Load(object sender, EventArgs e)
         {
 

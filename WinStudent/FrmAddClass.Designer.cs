@@ -30,14 +30,14 @@ namespace WinStudent
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtClassName = new System.Windows.Forms.TextBox();
-            this.cboGrades = new System.Windows.Forms.ComboBox();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.cboGrades = new System.Windows.Forms.ComboBox();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,55 +59,15 @@ namespace WinStudent
             this.panel2.Size = new System.Drawing.Size(565, 742);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // btnClose
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "班名";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "年级";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 325);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "描述";
-            // 
-            // txtClassName
-            // 
-            this.txtClassName.Location = new System.Drawing.Point(165, 82);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(227, 28);
-            this.txtClassName.TabIndex = 3;
-            // 
-            // cboGrades
-            // 
-            this.cboGrades.FormattingEnabled = true;
-            this.cboGrades.Location = new System.Drawing.Point(165, 183);
-            this.cboGrades.Name = "cboGrades";
-            this.cboGrades.Size = new System.Drawing.Size(227, 26);
-            this.cboGrades.TabIndex = 4;
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(165, 314);
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(227, 81);
-            this.txtRemark.TabIndex = 5;
+            this.btnClose.Location = new System.Drawing.Point(298, 430);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "关闭";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdd
             // 
@@ -119,14 +79,55 @@ namespace WinStudent
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnClose
+            // txtRemark
             // 
-            this.btnClose.Location = new System.Drawing.Point(298, 430);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.txtRemark.Location = new System.Drawing.Point(165, 314);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(227, 81);
+            this.txtRemark.TabIndex = 5;
+            // 
+            // cboGrades
+            // 
+            this.cboGrades.FormattingEnabled = true;
+            this.cboGrades.Location = new System.Drawing.Point(165, 183);
+            this.cboGrades.Name = "cboGrades";
+            this.cboGrades.Size = new System.Drawing.Size(227, 26);
+            this.cboGrades.TabIndex = 4;
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.Location = new System.Drawing.Point(165, 82);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(227, 28);
+            this.txtClassName.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "描述";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(52, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "年级";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "班名";
             // 
             // FrmAddClass
             // 
