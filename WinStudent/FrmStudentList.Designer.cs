@@ -30,11 +30,11 @@ namespace WinStudent
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboClasses = new System.Windows.Forms.ComboBox();
-            this.txtStuName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtStuName = new System.Windows.Forms.TextBox();
+            this.cboClasses = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.StuId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,29 +62,14 @@ namespace WinStudent
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件:";
             // 
-            // cboClasses
+            // btnFind
             // 
-            this.cboClasses.FormattingEnabled = true;
-            this.cboClasses.Location = new System.Drawing.Point(103, 41);
-            this.cboClasses.Name = "cboClasses";
-            this.cboClasses.Size = new System.Drawing.Size(121, 26);
-            this.cboClasses.TabIndex = 0;
-            // 
-            // txtStuName
-            // 
-            this.txtStuName.Location = new System.Drawing.Point(343, 39);
-            this.txtStuName.Name = "txtStuName";
-            this.txtStuName.Size = new System.Drawing.Size(100, 28);
-            this.txtStuName.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "班级:";
+            this.btnFind.Location = new System.Drawing.Point(492, 41);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(96, 26);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "查询";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -95,14 +80,30 @@ namespace WinStudent
             this.label2.TabIndex = 3;
             this.label2.Text = "姓名:";
             // 
-            // btnFind
+            // label1
             // 
-            this.btnFind.Location = new System.Drawing.Point(492, 41);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(96, 26);
-            this.btnFind.TabIndex = 4;
-            this.btnFind.Text = "查询";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "班级:";
+            // 
+            // txtStuName
+            // 
+            this.txtStuName.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtStuName.Location = new System.Drawing.Point(343, 39);
+            this.txtStuName.Name = "txtStuName";
+            this.txtStuName.Size = new System.Drawing.Size(100, 28);
+            this.txtStuName.TabIndex = 1;
+            // 
+            // cboClasses
+            // 
+            this.cboClasses.FormattingEnabled = true;
+            this.cboClasses.Location = new System.Drawing.Point(103, 41);
+            this.cboClasses.Name = "cboClasses";
+            this.cboClasses.Size = new System.Drawing.Size(121, 26);
+            this.cboClasses.TabIndex = 0;
             // 
             // dataGridView1
             // 
