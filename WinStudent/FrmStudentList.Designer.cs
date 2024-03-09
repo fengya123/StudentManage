@@ -35,14 +35,14 @@ namespace WinStudent
             this.label1 = new System.Windows.Forms.Label();
             this.txtStuName = new System.Windows.Forms.TextBox();
             this.cboClasses = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.StuId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,6 +70,7 @@ namespace WinStudent
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "查询";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // label2
             // 
@@ -105,23 +106,23 @@ namespace WinStudent
             this.cboClasses.Size = new System.Drawing.Size(121, 26);
             this.cboClasses.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvStudents
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StuId,
             this.StuName,
             this.ClassName,
             this.Sex,
             this.phone});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 562);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1425, 312);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvStudents.Location = new System.Drawing.Point(0, 562);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 62;
+            this.dgvStudents.RowTemplate.Height = 30;
+            this.dgvStudents.Size = new System.Drawing.Size(1425, 312);
+            this.dgvStudents.TabIndex = 1;
             // 
             // StuId
             // 
@@ -168,7 +169,7 @@ namespace WinStudent
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 874);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmStudentList";
@@ -176,7 +177,7 @@ namespace WinStudent
             this.Load += new System.EventHandler(this.FrmStudentList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,7 +190,7 @@ namespace WinStudent
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.ComboBox cboClasses;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;

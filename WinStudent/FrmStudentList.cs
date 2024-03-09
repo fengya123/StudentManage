@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,32 @@ namespace WinStudent
         private void FrmStudentList_Load(object sender, EventArgs e)
         {
             LoadClasses();//加载班级列表
+            LoadAllStudentList();//加载学生列表
+        }
+
+        private void LoadAllStudentList()
+        {
+            string sql = "select StuId,StuName,ClassName,GradeName,Sex,Phone from StudentInfo s "+
+                "inner join ClassInfo c on c.ClassId=s.ClassId "+
+                "inner join GradeInfo g on g.GradeId=c.GradeId";
+            //加载数据
+            DataTable dtStudents = SqlHelper.GetDataTable(sql);
+            //组装
+            if (dtStudents.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtStudents.Rows)
+                {
+                    string className = dr["ClassName"].ToString();
+                    string gradeName = dr["GradeName"].ToString();
+                    dr["ClassName"] = className + "--" + gradeName;
+                }
+            }
+            //我只想固定的列
+            //dgvStudents.AutoGenerateColumns = false;
+            dtStudents.Columns.Remove(dtStudents.Columns[3]);
+            //绑定数据
+            dgvStudents.DataSource = dtStudents;
+
         }
 
         private void LoadClasses()
@@ -59,6 +86,58 @@ namespace WinStudent
             cboClasses.DataSource = dtClasses;
             cboClasses.DisplayMember = "ClassName";
             cboClasses.ValueMember = "ClassId";
+        }
+        /// <summary>
+        /// 查询学生信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            //接收条件设置信息
+            int classId = (int)cboClasses.SelectedValue;
+            string stuName = txtStuName.Text.Trim();
+
+            //查询sql
+            string sql = "select StuId,StuName,ClassName,GradeName,Sex,Phone from StudentInfo s " +
+                "inner join ClassInfo c on c.ClassId=s.ClassId " +
+                "inner join GradeInfo g on g.GradeId=c.GradeId";
+            sql += " where 1=1";
+            if(classId>0)
+            {
+                sql += "and s.ClassId=@ClassId";
+            }
+            if(!string.IsNullOrEmpty(stuName))
+            {
+                sql += " and StuName like @StuName";
+            }
+            sql += " order by StuId";
+
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@ClassId",classId),
+                new SqlParameter("@stuName","%"+stuName+"%")
+            };
+
+            //加载数据
+            DataTable dtStudents = SqlHelper.GetDataTable(sql,paras);
+            //组装
+            if (dtStudents.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtStudents.Rows)
+                {
+                    string className = dr["ClassName"].ToString();
+                    string gradeName = dr["GradeName"].ToString();
+                    dr["ClassName"] = className + "--" + gradeName;
+                }
+            }
+            //我只想固定的列
+            //dgvStudents.AutoGenerateColumns = false;
+            dtStudents.Columns.Remove(dtStudents.Columns[3]);
+            //绑定数据
+            dgvStudents.DataSource = dtStudents;
+
         }
     }
 }
