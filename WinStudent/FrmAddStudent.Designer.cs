@@ -31,7 +31,7 @@ namespace WinStudent
         {
             this.txtStuName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboClass = new System.Windows.Forms.ComboBox();
+            this.cboClasses = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rbtMale = new System.Windows.Forms.RadioButton();
@@ -58,13 +58,13 @@ namespace WinStudent
             this.label1.TabIndex = 1;
             this.label1.Text = "姓名:";
             // 
-            // cboClass
+            // cboClasses
             // 
-            this.cboClass.FormattingEnabled = true;
-            this.cboClass.Location = new System.Drawing.Point(171, 154);
-            this.cboClass.Name = "cboClass";
-            this.cboClass.Size = new System.Drawing.Size(244, 26);
-            this.cboClass.TabIndex = 2;
+            this.cboClasses.FormattingEnabled = true;
+            this.cboClasses.Location = new System.Drawing.Point(171, 154);
+            this.cboClasses.Name = "cboClasses";
+            this.cboClasses.Size = new System.Drawing.Size(244, 26);
+            this.cboClasses.TabIndex = 2;
             // 
             // label2
             // 
@@ -131,6 +131,7 @@ namespace WinStudent
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "添加";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
@@ -140,6 +141,7 @@ namespace WinStudent
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmAddStudent
             // 
@@ -154,7 +156,7 @@ namespace WinStudent
             this.Controls.Add(this.rbtMale);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cboClass);
+            this.Controls.Add(this.cboClasses);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStuName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -171,7 +173,7 @@ namespace WinStudent
 
         private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboClass;
+        private System.Windows.Forms.ComboBox cboClasses;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rbtMale;

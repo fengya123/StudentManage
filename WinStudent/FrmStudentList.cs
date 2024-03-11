@@ -71,8 +71,8 @@ namespace WinStudent
                 foreach (DataRow dr in dtClasses.Rows)
                 {
                     string className = dr["ClassName"].ToString();
-                    string GradeName = dr["GradeName"].ToString();
-                    dr["ClassName"] = className + "--" + GradeName;
+                    string gradeName = dr["GradeName"].ToString();
+                    dr["ClassName"] = className + "--" + gradeName;
                 }
             }
             //添加默认选择项
