@@ -44,14 +44,14 @@ namespace WinStudent
                 new SqlParameter("@phone",phone)
             };
             object o = SqlHelper.ExecuteScalar(sql, paras);
-            if(o != null || o != DBNull.Value || ((int)o)>0)
+            if(o != null && o != DBNull.Value && ((int)o)>0)
             {
                
                 MessageBox.Show("该学生已存在", "添加学生提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             //4)添加入库 sl 参数 执行 完成返回受影响行数
-            string sqlAdd = "insert into StudentInfos (StuName,ClassId,Sex,Phone)values" +
+            string sqlAdd = "insert into StudentInfo (StuName,ClassId,Sex,Phone)values" +
                 "(@StuName,@ClassId,@Sex,@Phone)";
             SqlParameter[] parasadd =
             {
