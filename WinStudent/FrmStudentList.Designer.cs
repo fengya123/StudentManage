@@ -29,6 +29,8 @@ namespace WinStudent
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,11 +38,14 @@ namespace WinStudent
             this.txtStuName = new System.Windows.Forms.TextBox();
             this.cboClasses = new System.Windows.Forms.ComboBox();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.coICheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.StuId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIEdit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
@@ -111,11 +116,14 @@ namespace WinStudent
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.coICheck,
             this.StuId,
             this.StuName,
             this.ClassName,
             this.Sex,
-            this.phone});
+            this.phone,
+            this.coIEdit,
+            this.colDel});
             this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvStudents.Location = new System.Drawing.Point(0, 562);
             this.dgvStudents.Name = "dgvStudents";
@@ -123,6 +131,13 @@ namespace WinStudent
             this.dgvStudents.RowTemplate.Height = 30;
             this.dgvStudents.Size = new System.Drawing.Size(1425, 312);
             this.dgvStudents.TabIndex = 1;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
+            // 
+            // coICheck
+            // 
+            this.coICheck.HeaderText = "选择";
+            this.coICheck.MinimumWidth = 8;
+            this.coICheck.Name = "coICheck";
             // 
             // StuId
             // 
@@ -164,6 +179,22 @@ namespace WinStudent
             this.phone.Name = "phone";
             this.phone.ReadOnly = true;
             // 
+            // coIEdit
+            // 
+            dataGridViewCellStyle1.NullValue = "修改";
+            this.coIEdit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.coIEdit.HeaderText = "修改";
+            this.coIEdit.MinimumWidth = 8;
+            this.coIEdit.Name = "coIEdit";
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle2.NullValue = "删除";
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDel.HeaderText = "删除";
+            this.colDel.MinimumWidth = 8;
+            this.colDel.Name = "colDel";
+            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -191,10 +222,13 @@ namespace WinStudent
         private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.ComboBox cboClasses;
         private System.Windows.Forms.DataGridView dgvStudents;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn coICheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewLinkColumn coIEdit;
+        private System.Windows.Forms.DataGridViewLinkColumn colDel;
     }
 }

@@ -139,5 +139,27 @@ namespace WinStudent
             dgvStudents.DataSource = dtStudents;
 
         }
+        /// <summary>
+        /// 修改或删除功能的实现
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                //我当前点击的单元格
+                DataGridViewCell cell = dgvStudents.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell is DataGridViewLinkCell && cell.FormattedValue.ToString() == "修改")
+                {
+                    //修改操作 打开修改页面，并把stuId给传过去
+                }
+                else if (cell is DataGridViewLinkCell && cell.FormattedValue.ToString() == "删除")
+                {
+                    //删除操作 
+                }
+            }
+
+        }
     }
 }
