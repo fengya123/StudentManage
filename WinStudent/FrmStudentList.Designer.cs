@@ -46,6 +46,7 @@ namespace WinStudent
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coIEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,7 @@ namespace WinStudent
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnFind);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -195,6 +197,16 @@ namespace WinStudent
             this.colDel.MinimumWidth = 8;
             this.colDel.Name = "colDel";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(627, 43);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -230,5 +242,6 @@ namespace WinStudent
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewLinkColumn coIEdit;
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -11,7 +11,7 @@ namespace WinStudent
 {
     class SqlHelper
     {   //连接字符串
-        private static readonly string connString = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
+        public static readonly string connString = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
         private static SqlCommand cmd;
         private static object conn;
 
